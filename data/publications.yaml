@@ -1,0 +1,114 @@
+# 发表/录用论文共用一份列表；不按作者身份分类。作者顺序按原始资料保留。
+# status: accepted 表示已录用。出版年份未知时省略 year，切勿填写 0 或推断年份。
+# 已确认年份的论文按 year 倒序显示；无年份条目显示在前，使用录用状态标签。
+# Survey 录用状态依据本轮用户更新；刊名暂保留原简历 ACM Survey，不推断卷期或 DOI。
+papers:
+- id: models-data-race
+  title: On Models for Sound Dynamic Data Race Detection
+  authors:
+  - Shihao Zhu
+  - Yan Cai
+  - Jian Zhang
+  status: accepted
+  links: []
+  venue: ACM Survey
+- id: icse-2026-mapf
+  title: Metamorphic Fuzzing for Multi-Agent Path Finding Algorithms
+  authors:
+  - Luxia Lin
+  - Xudong Zhang
+  - Shihao Zhu
+  - Yan Cai
+  venue: ICSE
+  year: 2026
+  ccf: A
+  links: []
+- id: icse-2025-dependence
+  title: Reduce Dependence for Sound Concurrency Bug Prediction
+  authors:
+  - Shihao Zhu
+  - Yuqi Guo
+  - Yan Cai
+  - Bin Liang
+  - Long Zhang
+  venue: ICSE
+  year: 2025
+  ccf: A
+  links: []
+- id: apsec-2025-protocol
+  title: Seed-Adapted Cross-State Protocol Fuzzing
+  authors:
+  - Dingcheng Li
+  - Shihao Zhu
+  - Yan Cai
+  - Long Zhang
+  venue: APSEC
+  year: 2025
+  ccf: C
+  award: Distinguished Paper
+  links: []
+  award_zh: 杰出论文奖
+- id: apsec-2025-android
+  title: A Packing-Insensitive Detection Method for Android Malware Based on Image Representation
+  authors:
+  - Siyuan Ma
+  - Shihao Zhu
+  - Yan Cai
+  - Long Zhang
+  venue: APSEC
+  year: 2025
+  ccf: C
+  award: Distinguished Paper
+  links: []
+  award_zh: 杰出论文奖
+- id: icse-2024-pointer-flow
+  title: Reorder Pointer Flow in Sound Concurrency Bug Prediction
+  authors:
+  - Yuqi Guo
+  - Shihao Zhu
+  - Yan Cai
+  - Liang He
+  - Jian Zhang
+  venue: ICSE
+  year: 2024
+  ccf: A
+  links: []
+- id: icse-2023-control-flow
+  title: Tolerate Control-Flow Changes for Sound Data Race Prediction
+  authors:
+  - Shihao Zhu
+  - Yuqi Guo
+  - Long Zhang
+  - Yan Cai
+  venue: ICSE
+  year: 2023
+  ccf: A
+  links: []
+- id: fse-2023-python
+  title: Discovering Parallelisms in Python Programs
+  authors:
+  - Siwei Wei
+  - Guyang Song
+  - Senlin Zhu
+  - Ruoyi Ruan
+  - Shihao Zhu
+  - Yan Cai
+  venue: FSE
+  year: 2023
+  ccf: A
+  links: []
+- id: compsac-2023-predictive
+  title: Sound Predictive Fuzzing for Multi-threaded Programs
+  authors:
+  - Yuqi Guo
+  - Zheheng Liang
+  - Shihao Zhu
+  - Jinqiu Wang
+  - Zijiang Yang
+  - Jinbo Zhang
+  - Wuqiang Shen
+  - Yan Cai
+  venue: COMPSAC
+  year: 2023
+  ccf: C
+  links: []

@@ -1,0 +1,26 @@
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+{{- $ui := index .Site.Data.ui .Site.Language.Lang -}}
+<section id="funding" class="section-anchor">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><h2>{{ $ui.funding }}</h2></div>
+  <p class="section-intro">{{ $ui.principal }}<span class="funding-unit">{{ $ui.amounts }}</span></p>
+  <div class="funding-list">
+    {{ range .Site.Data.funding.principal }}{{ $grant := . }}
+      <article class="grant">
+        <div class="grant-body">
+          <h3>{{ if $zh }}{{ .name_zh }}{{ else }}{{ .name }}{{ end }}</h3>
+          {{ with .project_title }}<p class="grant-project">{{ if $zh }}{{ $grant.project_title_zh }}{{ else }}{{ . }}{{ end }}</p>{{ end }}
+          {{ with .period }}<p class="grant-period">{{ . }}</p>{{ else }}{{ with .year }}<p class="grant-period">{{ . }}</p>{{ end }}{{ end }}
+        </div>
+        <p class="grant-amount"><strong>{{ .amount_wan }}</strong><span>{{ $ui.amount_unit }}</span></p>
+      </article>
+    {{ end }}
+  </div>
+  {{ with .Site.Data.funding.participating }}
+    <details class="disclosure">
+      <summary>{{ $ui.participating }}</summary>
+      <div class="disclosure-body project-history">
+        {{ range . }}<article><p class="record-period">{{ .period }}</p><h3>{{ if $zh }}{{ .title_zh }}{{ else }}{{ .title }}{{ end }}</h3><p>{{ if $zh }}{{ .programme_zh }} · {{ .role_zh }}{{ else }}{{ .programme }} · {{ .role }}{{ end }}</p></article>{{ end }}
+      </div>
+    </details>
+  {{ end }}
+</section>

@@ -1,0 +1,8 @@
+{{- $ui := index .Site.Data.ui .Site.Language.Lang -}}
+<section id="recruitment" class="section-anchor">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2>{{ $ui.recruitment }}</h2></div>
+  <div class="recruitment-body">
+    <div class="recruitment-copy">{{ .Params.recruitment | markdownify }}</div>
+    <a class="recruitment-contact" href="mailto:{{ .Site.Data.authors.me.email }}">{{ $ui.contact_cta }} <span aria-hidden="true">↗</span></a>
+  </div>
+</section>

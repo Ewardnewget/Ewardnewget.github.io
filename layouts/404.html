@@ -1,0 +1,3 @@
+{{- $ui := index .Site.Data.ui .Site.Language.Lang -}}
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>404 — {{ $ui.page_not_found }}</title><link rel="stylesheet" href="{{ "css/researcher.css" | relURL }}"></head><body><main class="not-found"><p class="eyebrow">404</p><h1>{{ $ui.page_not_found }}</h1><p>{{ $ui.not_found_text }}</p><a href="{{ .Site.Home.RelPermalink }}">{{ $ui.home }} →</a></main></body></html>

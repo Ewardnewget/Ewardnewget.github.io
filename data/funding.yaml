@@ -1,0 +1,51 @@
+# 金额单位：人民币万元。金额与周期双语共用；不为未知周期补写日期。
+# 英文为展示译文，中文原名在 *_zh；不是对官方英文全称的认证。
+principal:
+- id: postdoc-c
+  name: National Postdoctoral Researcher Funding — Category C
+  name_zh: 2026年博士后国资计划C档
+  year: 2026
+  amount_wan: 24
+  role: Principal investigator
+- id: nsfc-c
+  name: NSFC Young Scientists Fund — Category C
+  name_zh: 国自然青年基金C类
+  amount_wan: 30
+  role: Principal investigator
+- id: ccf-huyanglin
+  name: CCF–Huyanglin Fund · Industry Research Project
+  name_zh: CCF-胡杨林基金产业课题
+  period: 2026.01–2026.12
+  amount_wan: 50
+  role: Principal investigator
+  project_title_zh: AI 增强的大规模 Trace 智能处理技术研究
+  project_title: AI-Enhanced Intelligent Processing of Large-Scale Traces
+participating:
+- title: RISC-V Basic Software Testing and Evaluation Standards and Tools
+  programme: CAS Strategic Priority Research Program (Category A)
+  period: 2022.11–2025.12
+  role: Project researcher
+  title_zh: RISC-V 基础软件测试评估规范与工具
+  programme_zh: 中科院前瞻战略科技先导专项（A 类先导专项）
+  role_zh: 课题研究人员
+- title: Security Testing of Industrial Protocols for Networked Collaborative Manufacturing
+  programme: National Key R&D Program of China
+  period: 2022.12–2025.11
+  role: Project researcher
+  title_zh: 面向网络协同制造的工业协议安全测试技术
+  programme_zh: 国家重点研发计划
+  role_zh: 课题研究人员
+- title: New Probabilistic Testing Methods for Concurrent Programs
+  programme: CAS Frontier Sciences Research Program
+  period: 2019.09–2024.09
+  role: Core team member
+  title_zh: 并发程序概率测试新方法
+  programme_zh: 中国科学院基础前沿科学研究计划
+  role_zh: 骨干
+- title: Collaborative Projects with Huawei, Ant Group, and HONOR
+  programme: Industry-sponsored research
+  period: 2021.12–2024.03
+  role: Core team member
+  title_zh: 华为、蚂蚁、荣耀合作横向
+  programme_zh: 企业合作横向
+  role_zh: 骨干

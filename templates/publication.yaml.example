@@ -1,0 +1,16 @@
+# 复制一条到 data/publications.yaml 的 papers 下。
+# 作者使用真实顺序，不设置一作/共同一作分类。
+- id: unique-paper-id
+  title: "Replace with the exact paper title"
+  authors: [First Author, Shihao Zhu, Last Author]
+  venue: "Replace with the confirmed venue"
+  year: 2026  # 示例年份；替换成已确认的真实年份。
+  links: []
+
+# 已录用、出版年份未确认：省略 year；这是模板示例，不是待发布资料。
+- id: unique-accepted-paper-id
+  title: "Replace with the exact accepted paper title"
+  authors: [Shihao Zhu, Another Author]
+  venue: "Replace with the confirmed venue"
+  status: accepted
+  links: []
