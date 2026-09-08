@@ -1,0 +1,23 @@
+{{- $p := .Site.Data.authors.me -}}
+{{- $lang := .Site.Language.Lang -}}
+{{- $ui := index .Site.Data.ui $lang -}}
+<section id="publications" class="section-anchor">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h2>{{ $ui.publications }}</h2><a class="section-link" href="{{ $p.scholar }}">Google Scholar ↗</a></div>
+  <p class="section-intro">{{ $ui.publication_intro }}</p>
+  <div id="publication-controls" class="publication-controls" data-count-pattern="{{ $ui.count_pattern }}" data-undated-label="{{ $ui.undated }}" hidden>
+    <div class="filter-fields">
+      <label class="search-label"><span class="sr-only">{{ $ui.search_label }}</span><input id="paper-search" type="search" placeholder="{{ $ui.search_placeholder }}" autocomplete="off"></label>
+      <label class="year-label"><span class="sr-only">{{ $ui.year_label }}</span><select id="paper-year"><option value="all">{{ $ui.all_years }}</option></select></label>
+    </div>
+    <div class="filter-bottom"><span id="paper-count" class="result-count" role="status" aria-live="polite" aria-atomic="true"></span></div>
+  </div>
+  <ol id="paper-list" class="publication-list">
+    {{ range .Site.Data.publications.papers }}{{ if not .year }}
+      {{ partial "researcher/paper-row.html" (dict "paper" . "owner" $p.name.display "ui" $ui "lang" $lang) }}
+    {{ end }}{{ end }}
+    {{ range (sort .Site.Data.publications.papers "year" "desc") }}{{ if .year }}
+      {{ partial "researcher/paper-row.html" (dict "paper" . "owner" $p.name.display "ui" $ui "lang" $lang) }}
+    {{ end }}{{ end }}
+  </ol>
+  <p id="no-papers" class="empty-state" hidden>{{ $ui.empty }} <button id="clear-filters" type="button">{{ $ui.clear }}</button></p>
+</section>

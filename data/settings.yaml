@@ -1,0 +1,3 @@
+# 改为 true 后，两种语言的 Honors 栏目与导航同时启用。
+# false 时不输出 HTML，不是使用 CSS 隐藏。
+show_honors: false

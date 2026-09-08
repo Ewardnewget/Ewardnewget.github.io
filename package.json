@@ -1,12 +1,14 @@
 {
-  "name": "hugo-blox-academic-cv-starter",
+  "name": "shihao-zhu-academic-homepage",
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@10.14.0",
-  "description": "Academic CV starter template for Hugo Blox with Tailwind CSS v4",
+  "description": "Shihao Zhu's research homepage on the existing HugoBlox stack",
   "scripts": {
     "dev": "hugo server --disableFastRender",
-    "build": "hugo --minify && pnpm run pagefind",
+    "build": "hugo --minify && python3 scripts/check_site.py public",
+    "test:content": "python3 -m unittest discover -s tests -p test_content.py -v",
+    "test:site": "python3 scripts/check_site.py public",
     "pagefind": "pagefind --site public"
   },
   "dependencies": {

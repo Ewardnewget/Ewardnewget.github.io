@@ -1,28 +1,24 @@
-############################
-## HUGO MODULES
-## Install or uninstall themes and plugins here.
-## Docs: https://gohugo.io/hugo-modules/
-############################
-
+# 保留原仓库固定的 HugoBlox 模块与扩展挂载方式。
 imports:
   - path: github.com/HugoBlox/kit/modules/integrations/netlify
   - path: github.com/HugoBlox/kit/modules/blox
   - path: github.com/HugoBlox/kit/modules/slides
-
-# Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
+  - source: site-content
+    target: content
+  - source: site-static
+    target: static
+  - source: data
+    target: data
   - source: hugo-blox/blox/community
     target: layouts/_partials/blox/community/
-    files:
-      - '**.html'
+    files: ['**.html']
   - source: hugo-blox/blox/all-access
     target: layouts/_partials/blox/
-    files:
-      - '**.html'
+    files: ['**.html']
   - source: hugo-blox/blox
     target: assets/dist/community/blox/
-    files:
-      - '**.css'
+    files: ['**.css']
   - source: layouts
     target: layouts
   - source: assets

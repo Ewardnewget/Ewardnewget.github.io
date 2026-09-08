@@ -1,0 +1,43 @@
+# 中文界面文字；论文原题与作者署名不翻译。
+profile_label: 个人学术主页
+research_area: 软件分析与测试
+overview: 个人简介
+recruitment: 招生信息
+publications: 发表论文
+funding: 科研项目
+experience: 工作与教育经历
+honors: 获奖荣誉
+based_at: 所在单位
+institute_short: 中国科学院软件研究所
+academy: ''
+skip: 跳转至正文
+navigation: 主导航
+language_switch: 选择语言
+contacts: 联系方式与学术主页
+portrait_alt: 祝世豪个人照片
+cv: 个人简历
+secondary_email: 备用邮箱
+contact_cta: 邮件联系
+publication_intro: 已发表与已录用论文统一列示；已确认年份的论文按时间倒序排列。
+search_label: 搜索论文
+search_placeholder: 搜索标题、作者或发表会议 / 期刊…
+year_label: 按年份筛选
+all_years: 全部年份
+undated: 年份未注明
+count_pattern: 显示 {visible} / {total} 篇
+empty: 没有符合筛选条件的论文。
+clear: 清除筛选
+accepted: 已录用
+scholar_search: 学术搜索
+scholar_find: 在 Google Scholar 中查找此论文
+principal: 主持项目
+amounts: 金额单位：人民币
+amount_unit: 万元
+participating: 参与项目
+updated: 最后更新
+back_top: 返回顶部 ↑
+page_not_found: 页面未找到
+not_found_text: 你访问的页面不存在。
+home: 返回首页
+logo_suffix: 标志
+email_aria: 发送邮件给祝世豪

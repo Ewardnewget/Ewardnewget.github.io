@@ -1,0 +1,5 @@
+{{- $paper := .paper -}}
+<li class="paper-row" id="{{ $paper.id }}" data-year="{{ with $paper.year }}{{ . }}{{ else }}undated{{ end }}">
+  <span class="paper-year">{{ with $paper.year }}{{ . }}{{ else }}{{ if eq $paper.status "accepted" }}{{ $.ui.accepted }}{{ else }}{{ $.ui.undated }}{{ end }}{{ end }}</span>
+  {{ partial "researcher/paper.html" . }}
+</li>

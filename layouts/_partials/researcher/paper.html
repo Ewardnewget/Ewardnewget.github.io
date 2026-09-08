@@ -1,0 +1,18 @@
+{{- $paper := .paper -}}
+{{- $owner := .owner -}}
+{{- $ui := .ui -}}
+{{- $zh := eq .lang "zh" -}}
+<article class="paper">
+  <h3 class="paper-title" lang="en">{{ $paper.title }}</h3>
+  <p class="paper-authors" lang="en">{{ range $i, $author := $paper.authors }}{{ if $i }}, {{ end }}{{ if eq $author $owner }}<strong class="author-self">{{ $author }}</strong>{{ else }}{{ $author }}{{ end }}{{ end }}.</p>
+  <div class="paper-meta">
+    {{ with $paper.venue }}<span class="venue">{{ . }}{{ with $paper.year }} {{ . }}{{ end }}</span>{{ end }}
+    {{ with $paper.ccf }}<span class="ccf">CCF {{ . }}</span>{{ end }}
+    {{ if eq $paper.status "accepted" }}<span class="accepted">{{ $ui.accepted }}</span>{{ end }}
+    {{ with $paper.award }}<span class="award">✦ {{ if and $zh $paper.award_zh }}{{ $paper.award_zh }}{{ else }}{{ . }}{{ end }}</span>{{ end }}
+  </div>
+  <div class="paper-links">
+    {{ range $paper.links }}<a href="{{ .url | relURL }}">{{ .label }} <span aria-hidden="true">↗</span></a>{{ end }}
+    <a href="{{ printf "https://scholar.google.com/scholar?q=%s" ($paper.title | urlquery) }}" aria-label="{{ $ui.scholar_find }}: {{ $paper.title }}">{{ $ui.scholar_search }} <span aria-hidden="true">↗</span></a>
+  </div>
+</article>

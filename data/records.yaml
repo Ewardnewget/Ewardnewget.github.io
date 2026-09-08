@@ -1,0 +1,27 @@
+# Honors 代码和数据保留；data/settings.yaml 的 show_honors 控制两种语言是否输出。
+honors:
+- period: '2025'
+  title: Distinguished Paper Award
+  organization: APSEC 2025
+  title_zh: 杰出论文奖
+  organization_zh: APSEC 2025
+- period: 2023–2024
+  title: Model Student of Merit
+  organization: University of Chinese Academy of Sciences
+  title_zh: 中国科学院大学三好学生标兵
+  organization_zh: 中国科学院大学
+- period: 2023–2024
+  title: First-Class Academic Scholarship
+  organization: University of Chinese Academy of Sciences
+  title_zh: 中国科学院大学一等学业奖学金
+  organization_zh: 中国科学院大学
+- period: 2020–2021
+  title: Student of Merit
+  organization: University of Chinese Academy of Sciences
+  title_zh: 中国科学院大学三好学生
+  organization_zh: 中国科学院大学
+- period: '2019'
+  title: University Student Scholarship
+  organization: University of Chinese Academy of Sciences
+  title_zh: 中国科学院大学大学生奖学金
+  organization_zh: 中国科学院大学

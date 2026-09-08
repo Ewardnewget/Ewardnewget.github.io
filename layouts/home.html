@@ -1,0 +1,81 @@
+{{- $p := .Site.Data.authors.me -}}
+{{- $lang := .Site.Language.Lang -}}
+{{- $zh := eq $lang "zh" -}}
+{{- $ui := index .Site.Data.ui $lang -}}
+{{- $name := $p.name.display -}}
+{{- if $zh }}{{ $name = $p.name.alternate }}{{ end -}}
+<!doctype html>
+<html lang="{{ if $zh }}zh-CN{{ else }}en{{ end }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{{ $name }}</title>
+  <meta name="description" content="{{ .Params.summary }}">
+  <meta name="author" content="{{ $name }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">{{ end }}
+  <link rel="alternate" hreflang="x-default" href="{{ "" | absURL }}">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ $name }}">
+  <meta property="og:description" content="{{ .Params.summary }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ $p.portrait | absURL }}">
+  <link rel="icon" href="{{ "images/favicon.svg" | relURL }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ "css/researcher.css" | relURL }}">
+  <script src="{{ "js/researcher.js" | relURL }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ $ui.skip }}</a>
+  <div class="site-shell">
+    <aside class="sidebar">
+      <a class="wordmark" href="#about" aria-label="{{ $name }} — {{ $ui.overview }}"><span class="monogram" aria-hidden="true">SZ<span>.</span></span><span class="sidebar-name">{{ $name }}</span></a>
+      <p class="sidebar-note">{{ $ui.profile_label }}<br>{{ $ui.research_area }}</p>
+      <nav class="site-nav" aria-label="{{ $ui.navigation }}">
+        <a href="#about" aria-current="location"><span>{{ $ui.overview }}</span></a>
+        <a href="#recruitment"><span>{{ $ui.recruitment }}</span></a>
+        <a href="#publications"><span>{{ $ui.publications }}</span></a>
+        <a href="#funding"><span>{{ $ui.funding }}</span></a>
+        <a href="#experience"><span>{{ $ui.experience }}</span></a>
+        {{ if .Site.Data.settings.show_honors }}<a href="#honors"><span>{{ $ui.honors }}</span></a>{{ end }}
+      </nav>
+      <div class="sidebar-bottom"><span class="small-label">{{ $ui.based_at }}</span><p>{{ $ui.institute_short }}{{ with $ui.academy }}<br>{{ . }}{{ end }}</p><span class="location">{{ if $zh }}{{ $p.location_zh }}{{ else }}{{ $p.location }}{{ end }}</span></div>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div class="page-toolbar">
+        <nav class="language-switch" aria-label="{{ $ui.language_switch }}">
+          {{ range .AllTranslations }}<a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}"{{ if eq .Language.Lang $lang }} aria-current="page"{{ end }}>{{ if eq .Language.Lang "en" }}English{{ else }}中文{{ end }}</a>{{ end }}
+        </nav>
+      </div>
+      <header id="about" class="profile-header section-anchor">
+        <div class="identity">
+          <div>
+            <p class="eyebrow">{{ $ui.research_area }}</p>
+            <h1>{{ $name }}</h1>
+            <p class="role">{{ if $zh }}{{ $p.role_zh }}{{ else }}{{ $p.role }}{{ end }}</p>
+            {{ range $p.affiliations }}<p class="affiliation"><a href="{{ .url }}">{{ if $zh }}{{ .name_zh }}{{ else }}{{ .name }}{{ end }}</a></p>{{ end }}
+          </div>
+          <img class="portrait" src="{{ $p.portrait | relURL }}" alt="{{ $ui.portrait_alt }}" width="1280" height="1792" fetchpriority="high">
+        </div>
+        <div class="profile-links" aria-label="{{ $ui.contacts }}">
+          <a class="contact-link" href="mailto:{{ $p.email }}" aria-label="{{ $ui.email_aria }}: {{ $p.email }}"><span aria-hidden="true">@</span> {{ $p.email_display }}</a>
+          <a href="{{ $p.scholar }}">Google Scholar <span aria-hidden="true">↗</span></a>
+          <a href="{{ $p.github }}">GitHub <span aria-hidden="true">↗</span></a>
+          {{ with $p.secondary_email }}<a class="secondary-contact" href="mailto:{{ . }}">{{ $ui.secondary_email }}: {{ . }}</a>{{ end }}
+          {{ with $p.public_cv }}<a href="{{ . | relURL }}">{{ $ui.cv }} <span aria-hidden="true">↗</span></a>{{ end }}
+        </div>
+        <div class="biography">{{ .Content }}</div>
+      </header>
+      {{ partial "researcher/recruitment.html" . }}
+      {{ partial "researcher/publications.html" . }}
+      {{ partial "researcher/funding.html" . }}
+      {{ partial "researcher/experience.html" . }}
+      {{ if .Site.Data.settings.show_honors }}{{ partial "researcher/records.html" . }}{{ end }}
+      <footer class="page-footer">
+        <p>{{ $name }}<br><span class="footer-sub">{{ $ui.updated }} {{ $p.updated }}</span></p>
+        <p class="footer-tools"><a href="#about">{{ $ui.back_top }}</a></p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

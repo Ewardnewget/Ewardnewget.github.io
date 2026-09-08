@@ -1,0 +1,44 @@
+# 英文界面文字；与 zh.yaml 的键保持一致。
+profile_label: Research profile
+research_area: Software analysis & testing
+overview: About
+recruitment: Internship opportunities
+publications: Publications
+funding: Funding & projects
+experience: Experience & education
+honors: Honors
+based_at: BASED AT
+institute_short: Institute of Software
+academy: Chinese Academy of Sciences
+skip: Skip to content
+navigation: Main navigation
+language_switch: Choose language
+contacts: Contact and academic profiles
+portrait_alt: Portrait of Shihao Zhu
+cv: Curriculum vitae
+secondary_email: Gmail
+contact_cta: Contact by email
+publication_intro: Published and accepted work, in a single list. Papers with a confirmed year are sorted
+  from newest to oldest.
+search_label: Search publications
+search_placeholder: Search title, author, or venue…
+year_label: Filter by year
+all_years: All years
+undated: Year not specified
+count_pattern: '{visible} of {total} papers'
+empty: No papers match these filters.
+clear: Clear filters
+accepted: Accepted
+scholar_search: Scholar search
+scholar_find: Find this paper on Google Scholar
+principal: As principal investigator
+amounts: Amounts in CNY
+amount_unit: × 10,000 CNY
+participating: Selected projects as a team member
+updated: Last updated
+back_top: Back to top ↑
+page_not_found: Page not found
+not_found_text: The page you are looking for could not be found.
+home: Return to homepage
+logo_suffix: logo
+email_aria: Email Shihao Zhu

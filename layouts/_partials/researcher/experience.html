@@ -1,0 +1,20 @@
+{{- $p := .Site.Data.authors.me -}}
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+{{- $ui := index .Site.Data.ui .Site.Language.Lang -}}
+<section id="experience" class="section-anchor">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">04</span><h2>{{ $ui.experience }}</h2></div>
+  <div class="timeline">
+    {{ range $p.experience }}
+      <article class="timeline-item">
+        <div class="institution-logo-frame"><img class="institution-logo" src="{{ .logo | relURL }}" alt="{{ if $zh }}{{ .org_zh }}{{ else }}{{ .org }}{{ end }} {{ $ui.logo_suffix }}" width="74" height="64" loading="lazy"></div>
+        <div class="timeline-body"><p class="timeline-date">{{ if $zh }}{{ replace .period "present" "至今" }}{{ else }}{{ .period }}{{ end }}</p><h3>{{ if $zh }}{{ .role_zh }}{{ else }}{{ .role }}{{ end }}</h3><p>{{ if $zh }}{{ .org_zh }}{{ else }}{{ .org }}{{ end }}</p><p class="timeline-note">{{ if $zh }}{{ .detail_zh }}{{ else }}{{ .detail }}{{ end }}</p></div>
+      </article>
+    {{ end }}
+    {{ range $p.education }}
+      <article class="timeline-item">
+        <div class="institution-logo-frame"><img class="institution-logo" src="{{ .logo | relURL }}" alt="{{ if $zh }}{{ .institution_zh }}{{ else }}{{ .institution }}{{ end }} {{ $ui.logo_suffix }}" width="74" height="64" loading="lazy"></div>
+        <div class="timeline-body"><p class="timeline-date">{{ .period }}</p><h3>{{ if $zh }}{{ .degree_zh }}{{ else }}{{ .degree }}{{ end }}</h3><p>{{ if $zh }}{{ .institution_zh }}{{ else }}{{ .institution }}{{ end }}</p><p class="timeline-note">{{ if $zh }}{{ .detail_zh }}{{ else }}{{ .detail }}{{ end }}</p></div>
+      </article>
+    {{ end }}
+  </div>
+</section>

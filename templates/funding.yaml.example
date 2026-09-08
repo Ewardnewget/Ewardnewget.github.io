@@ -1,0 +1,8 @@
+# 复制到 data/funding.yaml 的 principal 下；替换示例名称与金额。
+- id: unique-grant-id
+  name: "English display name"
+  name_zh: "正式中文名称"
+  amount_wan: 10  # 人民币万元；替换成真实金额。
+  role: Principal investigator
+  # 仅在确知时增加 year 或 period，不按获资助年份推断整个周期。
+  # 有具体课题名时同步维护 project_title 和 project_title_zh。

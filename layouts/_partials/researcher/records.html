@@ -1,0 +1,9 @@
+{{/* Kept for future use. home.html and the menu include this only when show_honors is true. */}}
+{{- $zh := eq .Site.Language.Lang "zh" -}}
+{{- $ui := index .Site.Data.ui .Site.Language.Lang -}}
+<section id="honors" class="section-anchor">
+  <div class="section-heading"><span class="section-number" aria-hidden="true">05</span><h2>{{ $ui.honors }}</h2></div>
+  <ul class="honors-list">
+    {{ range .Site.Data.records.honors }}<li><span class="record-period">{{ .period }}</span><div><h3>{{ if $zh }}{{ .title_zh }}{{ else }}{{ .title }}{{ end }}</h3><p>{{ if $zh }}{{ .organization_zh }}{{ else }}{{ .organization }}{{ end }}</p></div></li>{{ end }}
+  </ul>
+</section>
