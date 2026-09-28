@@ -3,6 +3,19 @@
 # 已确认年份的论文按 year 倒序显示；无年份条目显示在前，使用录用状态标签。
 # Survey 录用状态依据本轮用户更新；刊名暂保留原简历 ACM Survey，不推断卷期或 DOI。
 papers:
+- id: fuzz-generation
+  title: Hybrid Fuzzing in Input Generation Logic
+  authors:
+  - Siwei Wei
+  - Shihao Zhu
+  - Ruijie Meng
+  - Yan Cai
+  venue: ASE
+  year: 2026
+  ccf: A
+  links: []
+  award: Distinguished Paper
+  award_zh: 杰出论文奖
 - id: models-data-race
   title: On Models for Sound Dynamic Data Race Detection
   authors:
